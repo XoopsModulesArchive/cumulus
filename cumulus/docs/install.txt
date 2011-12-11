@@ -1,0 +1,10 @@
+INSTALL/UNISTALL
+=================
+
+In order to install the module please do following:
+
+1. Before you install this module, make sure that you have installed the Tag module
+2. Install Cumulus just like another module
+3. Set display of the block for selected pages in the Blocks section. You might also need to set the block access permission
+4. have fun
+
