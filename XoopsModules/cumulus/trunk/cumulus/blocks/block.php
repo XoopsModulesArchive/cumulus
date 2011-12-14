@@ -146,33 +146,9 @@ function tag_block_cumulus_edit($options)
 
 
 
-    $form  = new XoopsBlockForm("","",""); 
-    $form->addElement(new XoopsFormText(TAG_MB_ITEMS, "options[0]", 25, 25,$options[0]));
-    $form->addElement(new XoopsFormText(TAG_MB_TIME_DURATION, "options[1]", 25, 25,$options[1]));
-    $form->addElement(new XoopsFormText(TAG_MB_FONTSIZE_MAX, "options[2]", 25, 25,$options[2]));
-    $form->addElement(new XoopsFormText(TAG_MB_FONTSIZE_MIN, "options[3]", 25, 25,$options[3]));
-    $form->addElement(new XoopsFormText(TAG_MB_FLASH_WIDTH, "options[4]", 25, 25,$options[4]));
-    $form->addElement(new XoopsFormText(TAG_MB_FLASH_HEIGHT, "options[5]", 25, 25,$options[5]));
-    $form->addElement(new XoopsFormColorPicker(TAG_MB_FLASH_TRANSPARENCY,"options[6]",$options[6]));
-    $form_cumulus_flash_transparency = new XoopsFormSelect(TAG_MB_FLASH_TRANSPARENCY,"options[7]",$options[7]);
-    $form_cumulus_flash_transparency->addOption(0,_NO); 
-    $form_cumulus_flash_transparency->addOption("transparent",TAG_MB_FLASH_TRANSPARENT); 
-    $form->addElement($form_cumulus_flash_transparency); 
-    //$form->addElement(new XoopsFormColorPicker(TAG_MB_FLASH_FONTCOLOR,"options[8]",$options[8]));
-    //$form->addElement(new XoopsFormColorPicker("cumulus_flash_hicolor","options[9]",$options[9]));
-//    $form->addElement(new XoopsFormText(TAG_MB_FLASH_SPEED, "options[9]", 25, 25,$options[9]));
-    
-    
-    $form->addElement(new XoopsFormColorPicker(TAG_MB_FLASH_MINFONTCOLOR,"options[8]",$options[8]));
-    $form->addElement(new XoopsFormColorPicker(TAG_MB_FLASH_MAXFONTCOLOR,"options[9]",$options[9]));
-    $form->addElement(new XoopsFormColorPicker(TAG_MB_FLASH_HILIGHTFONTCOLOR,"options[10]",$options[10]));
-    $form->addElement(new XoopsFormText(TAG_MB_FLASH_SPEED, "options[11]", 25, 25,$options[11]));
-    
-     
-    return $form->render(); 
-} 
 
 include_once(XOOPS_ROOT_PATH."/class/xoopsformloader.php");
+if(!class_exists('XoopsBlockForm')) { //changed by trabis
 class XoopsBlockForm extends XoopsForm
 {
 
@@ -200,7 +176,7 @@ $ele_name = $this->getName();
 				        "</div>";
 			    }
 				
-                $ret .= "<div style='margin:5px 0 8px 0; '>".$ele->render()."</div>n"; 
+				$ret .= "<div style='margin:5px 0 8px 0; '>".$ele->render()."</div>\n";
 			} else {
 				$hidden .= $ele->render();
 			}
@@ -210,6 +186,29 @@ $ele_name = $this->getName();
 		return $ret;
 	}
 }
+}
+
+
+    $form  = new XoopsBlockForm("","",""); 
+    $form->addElement(new XoopsFormText(TAG_MB_ITEMS, "options[0]", 25, 25,$options[0]));
+    $form->addElement(new XoopsFormText(TAG_MB_TIME_DURATION, "options[1]", 25, 25,$options[1]));
+    $form->addElement(new XoopsFormText(TAG_MB_FONTSIZE_MAX, "options[2]", 25, 25,$options[2]));
+    $form->addElement(new XoopsFormText(TAG_MB_FONTSIZE_MIN, "options[3]", 25, 25,$options[3]));
+    $form->addElement(new XoopsFormText(TAG_MB_FLASH_WIDTH, "options[4]", 25, 25,$options[4]));
+    $form->addElement(new XoopsFormText(TAG_MB_FLASH_HEIGHT, "options[5]", 25, 25,$options[5]));
+    $form->addElement(new XoopsFormColorPicker(TAG_MB_FLASH_TRANSPARENCY,"options[6]",$options[6]));
+    $form_cumulus_flash_transparency = new XoopsFormSelect(TAG_MB_FLASH_TRANSPARENCY,"options[7]",$options[7]);
+    $form_cumulus_flash_transparency->addOption(0,_NO); 
+    $form_cumulus_flash_transparency->addOption("transparent",TAG_MB_FLASH_TRANSPARENT); 
+    $form->addElement($form_cumulus_flash_transparency);    
+    $form->addElement(new XoopsFormColorPicker(TAG_MB_FLASH_MINFONTCOLOR,"options[8]",$options[8]));
+    $form->addElement(new XoopsFormColorPicker(TAG_MB_FLASH_MAXFONTCOLOR,"options[9]",$options[9]));
+    $form->addElement(new XoopsFormColorPicker(TAG_MB_FLASH_HILIGHTFONTCOLOR,"options[10]",$options[10]));
+    $form->addElement(new XoopsFormText(TAG_MB_FLASH_SPEED, "options[11]", 25, 25,$options[11]));
+    
+    return $form->render(); 
+} 
+
 
 
 ?>
