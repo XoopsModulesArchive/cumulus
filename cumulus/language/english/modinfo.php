@@ -12,10 +12,10 @@
 
 if (!defined('XOOPS_ROOT_PATH')) { exit(); }
 
-define("_MI_CUMULUS_NAME", "cumulus");
-define("_MI_CUMULUS_DESC", "cumulus in xoops");
+define("_MI_CUMULUS_NAME","cumulus");
+define("_MI_CUMULUS_DESC","cumulus in xoops");
 
-define("_MI_BLOCK_CUMULUS", "Cumulus Tag Cloud");
-define("_MI_BLOCK_CUMULUS_DESC", "");
+define("_MI_BLOCK_CUMULUS","Cumulus Tag Cloud");
+define("_MI_BLOCK_CUMULUS_DESC","");
 
 ?>
