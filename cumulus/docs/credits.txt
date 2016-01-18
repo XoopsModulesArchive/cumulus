@@ -1,7 +1,0 @@
-Credits
-===============
-
-Cumulus is a module that provides a beautiful, Flash-based 3D tag cloud implementation.
-It is based on Roy Tanck's WordPress module called WP-Cumulus (see http://wordpress.org/extend/plugins/wp-cumulus/)
-
-Converted to XOOPS by Susheng Yang (ezsky). 
