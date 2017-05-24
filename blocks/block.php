@@ -56,7 +56,7 @@ function tag_block_cumulus_show( $options, $dirname = "", $catid = 0 )
     }
     
     $block = array();
-    $tag_handler =& xoops_getmodulehandler("tag", "tag");
+    $tag_handler = xoops_getModuleHandler("tag", "tag");
     tag_define_url_delimiter();
     
     $criteria = new CriteriaCompo();
@@ -105,8 +105,8 @@ function tag_block_cumulus_show( $options, $dirname = "", $catid = 0 )
 
     $block["tag_dirname"] = "tag";
     if (!empty($modid)) {
-        $module_handler =& xoops_gethandler('module');
-        if ($module_obj =& $module_handler->get($modid)) {
+        $module_handler = xoops_getHandler('module');
+        if ($module_obj = $module_handler->get($modid)) {
             $block["tag_dirname"] = $module_obj->getVar("dirname");
         }
     }
@@ -142,10 +142,6 @@ EOT;
 
 function tag_block_cumulus_edit($options)
 {
-
-
-
-
 
 include_once(XOOPS_ROOT_PATH."/class/xoopsformloader.php");
 if(!class_exists('XoopsBlockForm')) { //changed by trabis
@@ -209,6 +205,3 @@ $ele_name = $this->getName();
     return $form->render(); 
 } 
 
-
-
-?>
